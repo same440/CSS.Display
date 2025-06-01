@@ -1,0 +1,95 @@
+
+    /* 🔵 Static Position (ডিফল্ট) */
+    .static-box {
+      position: static;
+      background: lightgray;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid black;
+      /* EN: Default position, no offset works (top/left/right/bottom ignored) */
+      /* BN: এটা ডিফল্ট পজিশন, কোন offset কাজ করে না (top/left ইত্যাদি) */
+    }
+
+    /* 🟡 Relative Position (নিজের অবস্থান থেকে সরিয়ে রাখা যায়) */
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background: gold;
+      padding: 10px;
+      margin: 10px;
+      /* EN: Moves 20px down and 20px right from normal position */
+      /* BN: নিজ অবস্থান থেকে ২০px নিচে ও ডানে সরবে */
+    }
+
+    /* 🔴 Absolute Position (নিকটতম parent এর উপর নির্ভর) */
+    .absolute-wrapper {
+      position: relative; /* Absolute কাজ করার জন্য এইটা লাগবেই */
+      background: #f8d7da;
+      height: 200px;
+      margin: 10px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: crimson;
+      color: white;
+      padding: 10px;
+      /* EN: Positioned 10px from top and right of parent */
+      /* BN: parent এর উপর থেকে ১০px দূরে ডানে ও উপরে থাকবে */
+    }
+
+    /* ⚫ Fixed Position (স্ক্রল করলেও ঠিক জায়গায় থাকবে) */
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 10px;
+      z-index: 999;
+      /* EN: Always stays fixed at bottom-right corner */
+      /* BN: স্ক্রল করলেও নিচের ডান পাশে থাকবে সবসময় */
+    }
+
+    /* 🟣 Sticky Position (scroll করলে আটকে যাবে) */
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: violet;
+      padding: 10px;
+      z-index: 10;
+      border-bottom: 2px solid black;
+      /* EN: Sticks to top when scrolled to that position */
+      /* BN: স্ক্রল করলে একটা নির্দিষ্ট height এ পৌঁছালে আটকে যাবে */
+    }
+
+    .spacer {
+      height: 1000px;
+      /* EN: Just for scroll testing */
+      /* BN: স্ক্রল করার সুবিধার জন্য */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="static-box">Static Box (🔵 Static - ডিফল্ট পজিশন)</div>
+
+  <div class="relative-box">Relative Box (🟡 Relative - নিজের জায়গা থেকে সরবে)</div>
+
+  <div class="absolute-wrapper">
+    <div class="absolute-box">Absolute Box (🔴 Absolute - Parent এর উপর নির্ভর)</div>
+  </div>
+
+  <div class="sticky-box">Sticky Box (🟣 Sticky - Scroll করলে আটকে থাকবে)</div>
+
+  <div class="spacer">
+    <p>Scroll down to test Sticky and Fixed box...</p>
+  </div>
+
+  <div class="fixed-box">Fixed Box (⚫ Fixed - সবসময় নিচে ডানে থাকবে)</div>
+
+</body>
+</html>
